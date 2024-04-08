@@ -25,7 +25,7 @@ export default function Home() {
         >
           <Image
             className={styles.logo}
-            src="/dorka.png"
+            src="./dorka.png"
             alt="Logo"
             priority
             fill
