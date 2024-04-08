@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: "/pijanyzuk",
-  output: "export", // <=== enables static exports
+  // basePath: "/",
   reactStrictMode: true,
 };
 
