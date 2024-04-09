@@ -1,0 +1,13 @@
+services:
+  nextjs:
+    build: .
+    ports:
+      - "5005:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - dev
+
+networks:
+  dev:
+    driver: bridge
