@@ -15,17 +15,18 @@ const Game = () => {
   const [gameId, setGameId] = useState<string>();
   const [options, setOptions] = useState<Partial<IGameOptions>>(GAME_OPTIONS);
   const [paletteIndex, setPaletteIndex] = useState<number>();
+  const palette = useMemo(() => {
+    if (paletteIndex !== undefined) {
+      return PALETTES[paletteIndex];
+    }
+
+    return undefined;
+  }, [paletteIndex]);
   const tiles = useMemo(() => {
     if (!gameId) return [];
 
-    let palette;
-
-    if (paletteIndex !== undefined) {
-      palette = PALETTES[paletteIndex];
-    }
-
     return generateGame({ ...options, palette });
-  }, [gameId, options, paletteIndex]);
+  }, [gameId, options, palette]);
 
   useEffect(() => {
     setGameId(uuidv4());
@@ -50,7 +51,7 @@ const Game = () => {
         />
       </aside>
       <main className={styles.content}>
-        <Grid tiles={tiles} />
+        <Grid tiles={tiles} palette={palette} />
       </main>
     </div>
   );
