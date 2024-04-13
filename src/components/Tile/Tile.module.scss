@@ -1,0 +1,11 @@
+.root {
+  display: grid;
+}
+
+.dot {
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}
