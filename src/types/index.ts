@@ -3,3 +3,8 @@ interface IGameOptions {
   tileSize?: number;
   colorsNumber?: number;
 }
+
+interface ITile {
+  id: string;
+  dots: string[];
+}

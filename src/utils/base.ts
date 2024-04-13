@@ -27,3 +27,8 @@ export const shuffle = <T>(array: T[]): T[] => {
 
   return newArray;
 };
+
+export const getNumericValue = (value: string) => {
+  const num = parseInt(value, 10);
+  return isNaN(num) ? undefined : num;
+};

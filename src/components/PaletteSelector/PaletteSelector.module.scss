@@ -1,0 +1,23 @@
+.root {
+  display: grid;
+  grid-gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  grid-gap: 0.5rem;
+
+  input {
+    padding: 0.25rem 0.5rem;
+    border: none;
+
+    &[data-disabled="true"] ~ label,
+    &:disabled ~ label {
+      opacity: 0.4;
+    }
+  }
+}

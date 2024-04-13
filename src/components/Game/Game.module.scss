@@ -14,12 +14,15 @@
 .sidebar {
   grid-area: sidebar;
   width: 24rem;
+  padding: 1rem;
 }
 
 .content {
   grid-area: content;
+  padding: 1rem;
 }
 
 .title {
   text-align: center;
+  margin: 1.5rem auto 1rem;
 }

@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 import { GAME_OPTIONS, PALETTES } from "../consts";
 import { randomIntFromInterval, shuffle } from "./base";
 
@@ -23,19 +25,20 @@ export const generateUniqueTiles = (size = 4) => {
   return Array.from(Array(count % 2 ? Math.floor(count) : count));
 };
 
-export const generateGame = (props?: IGameOptions) => {
-  const { gameSize, tileSize, colorsNumber } = Object.assign(
-    {},
-    GAME_OPTIONS,
-    props
-  );
+export const generateGame = (props?: IGameOptions & { palette?: string[] }) => {
+  const {
+    gameSize,
+    tileSize,
+    colorsNumber,
+    palette: _palette,
+  } = Object.assign({}, GAME_OPTIONS, props);
 
-  const palette = pickPalette();
+  const palette = _palette ?? pickPalette();
 
-  const tiles: string[][] = generateUniqueTiles(gameSize).reduce((acc) => {
+  const tiles: ITile[] = generateUniqueTiles(gameSize).reduce((acc) => {
     const colors = pickColors(palette, colorsNumber);
     const tile = generateDots(tileSize, colors);
-    return [...acc, tile, tile];
+    return [...acc, { id: uuidv4(), dots: tile }, { id: uuidv4(), dots: tile }];
   }, []);
 
   return shuffle(tiles);
