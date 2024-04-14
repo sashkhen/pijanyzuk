@@ -1,4 +1,3 @@
-/** todo: clean up */
 .root {
   display: grid;
   grid-gap: 1rem;
@@ -10,6 +9,11 @@
   @media screen and (min-width: 64rem) {
     grid-template-columns: 24rem 1fr;
   }
+}
+
+.header {
+  padding: 0.5rem;
+  text-align: center;
 }
 
 .content {
@@ -27,4 +31,21 @@
 .title {
   text-align: center;
   margin: 1.5rem auto 1rem;
+}
+
+.legend {
+  display: inline-grid;
+  grid-template-columns: 4rem 1fr;
+  align-items: center;
+
+  @media screen and (min-width: 64rem) {
+    text-align: left;
+  }
+
+  .purple {
+    color: #9f8be8;
+  }
+  .pink {
+    color: #ffc2e2;
+  }
 }
