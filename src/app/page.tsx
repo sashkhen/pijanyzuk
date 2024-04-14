@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import styles from "./page.module.css";
 
@@ -7,13 +8,12 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          Hi&nbsp;
-          <code className={styles.code}>Damian</code>
-          &nbsp;😻
+          <Link href="memory-game">Meowmory Game</Link>
         </p>
-        <div>By Sashunia</div>
+        <p>
+          <Link href="master-mind">MeowsterMind Game</Link>
+        </p>
       </div>
-
       <div className={styles.center}>
         <div
           style={{
