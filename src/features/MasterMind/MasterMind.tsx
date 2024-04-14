@@ -80,6 +80,29 @@ const MasterMind = () => {
         <h1 className={styles.title}>
           Welcome to <b>MeowsterMind</b> Game
         </h1>
+        <Button
+          type="link"
+          href="https://www.wikihow.com/Play-Mastermind"
+          target="_blank"
+        >
+          How to play
+        </Button>
+
+        <div>
+          <div className={styles.legend}>
+            <Match data={[2, 1, 0, 0]} />
+            <div>
+              <p>
+                <code className={styles.purple}>purple</code> = guessed color
+                and position
+              </p>
+              <p>
+                <code className={styles.pink}>pink</code> = guessed color, but
+                not position
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <main className={clsx(styles.content, !game && styles.empty)}>
         {game ? (
@@ -89,7 +112,7 @@ const MasterMind = () => {
               {game.originalSequence?.map((value, i) => (
                 <Item
                   key={`original-${value}-${i}`}
-                  value={isCheating ? value : undefined}
+                  value={isCheating || game?.isGameOver ? value : undefined}
                 />
               ))}
             </Sequence>
