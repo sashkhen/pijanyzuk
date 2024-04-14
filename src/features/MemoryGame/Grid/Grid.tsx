@@ -1,13 +1,13 @@
 import { useMemo } from "react";
 
-import { randomIntFromInterval } from "@/utils/base";
+import { getRandomIntFromInterval } from "@/utils/base";
 
 import Tile from "../Tile";
 import styles from "./Grid.module.scss";
 
 const Grid = ({ tiles, palette }: { tiles: ITile[]; palette?: string[] }) => {
   const backColor = useMemo(() => {
-    return palette?.[randomIntFromInterval(0, palette.length - 1)];
+    return palette?.[getRandomIntFromInterval(0, palette.length - 1)];
   }, [palette]);
   return (
     <div

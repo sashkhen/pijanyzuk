@@ -1,0 +1,25 @@
+.root {
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0.5rem;
+}
+
+.dot {
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  &.weight1 {
+    background-color: #ffc2e2;
+  }
+
+  &.weight2 {
+    background-color: #9f8be8;
+  }
+}

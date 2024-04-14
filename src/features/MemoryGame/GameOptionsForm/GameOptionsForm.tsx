@@ -1,4 +1,4 @@
-import { GAME_OPTIONS } from "@/consts";
+import { MEMORY_GAME_OPTIONS } from "@/consts";
 import { getNumericValue } from "@/utils/base";
 
 import styles from "./GameOptionsForm.module.scss";
@@ -7,7 +7,7 @@ const GameOptionsForm = ({
   onChange,
   ...props
 }: IGameOptions & { onChange?: (values: Partial<IGameOptions>) => void }) => {
-  const values = Object.assign({}, GAME_OPTIONS, props);
+  const values = Object.assign({}, MEMORY_GAME_OPTIONS, props);
   const { gameSize, tileSize, colorsNumber } = values;
 
   return (

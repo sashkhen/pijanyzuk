@@ -1,2 +1,2 @@
 export * as baseUtils from "./base";
-export * as tilesUtils from "./tiles";
+export * as tilesUtils from "./memoryGame";

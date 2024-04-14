@@ -1,4 +1,21 @@
-export const GAME_OPTIONS = {
+export const CONFETTI_CONFIG = {
+  won: {
+    emojis: ["🦄", "🌈", "⚡️", "💥", "✨", "🌸"],
+    confettiNumber: 240,
+  },
+  lost: {
+    emojis: ["😿"],
+    emojiSize: 200,
+    confettiNumber: 10,
+  },
+};
+
+export const COLOR_SETS = [
+  ["#ff595e", "#ff924c", "#ffca3a", "#8ac926", "#1982c4", "#6a4c93"],
+  ["#0cb2af", "#a1c65d", "#fac723", "#f29222", "#e95e50", "#936fac"],
+];
+
+export const MEMORY_GAME_OPTIONS = {
   gameSize: 4,
   tileSize: 4,
   colorsNumber: 2,
